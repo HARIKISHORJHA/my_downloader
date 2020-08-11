@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><title>Smart downloader</title>
+	<style>
+		body{
+			
+			background-color:rgb(6, 17, 27);
+			
+		}
+		header {
+ 			 display: block;
+		}
+		h{
+			font-family: "Times New Roman", Times, serif;
+			color:green;
+			font-size:xx-large;
+			font-style: italic;
+			font-weight: bolder;
+			
+		}
+
+		h1{
+			font-family: "Times New Roman", Times, serif;
+
+			font-size: xx-large;
+			font-style: italic;
+			font-weight:bolder;
+			
+			
+		}
+		
+		h2{
+			font-family: "Times New Roman", Times, serif;
+
+			font-size: xx-large;
+			font-style: italic;
+			font-weight: bolder;
+			
+			
+		}
+
+	</style>
+
+
+</head>
+	<body ><center>
+		<header style="border:2px solid black; height:100px; background-color:antiquewhite" ><h1><font size="12" font color="Black">SmartDownloader</font></h1></header>
+		
+		<section style="border:2px ; height:150px;"><h><img src="\static\logo.jpg" width="120" height="120"></h></section>
+
+		<footer>
+
+			<h><u>Welcome to our YouTube video Downloader!!</u></h>
+			<form name="myform" action="service" method="POST" onsubmit="return(validation());" >{%csrf_token%}
+		
+				<h2><i><font size="6" font color="white">Video url:  </b><input type="text" id="name" placeholder="input url here...." name="name" size="80"><i></i></u>
+				<input type="submit" id="submit"  value="Download"color="green"></h2>
+			</form>
+			
+		</footer>
+
+
+		
+	</body>
+</html>
