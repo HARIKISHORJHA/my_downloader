@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0@ojy&dk^m85yu3q=xt^$pl_8zszln@3ltc9!16ablhk9_1hn*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,7 +126,7 @@ USE_TZ = True
 
 #created manually
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/my_downloader/static/'# it is changed from /static/
+STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -135,4 +135,3 @@ STATICFILES_DIRS = [
 ]
 #created manually
 django_heroku.settings(locals())
-
