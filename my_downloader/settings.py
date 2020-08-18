@@ -126,7 +126,7 @@ USE_TZ = True
 
 #created manually
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+STATIC_URL = '/my_downloader/static/'# it is changed from /static/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #STATIC_URL = '/static/'
 STATICFILES_DIRS = [
