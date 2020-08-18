@@ -1,3 +1,3 @@
 #web: gunicorn my_downloader.wsgi --log-file -
-web: gunicorn my_downloader.wsgi --access-logfile static
+web: gunicorn my_downloader.wsgi --access-logfile FILE
 
