@@ -20,7 +20,7 @@ def service(request):
             video=yt.streams.first()
             video.download()
             message="Successfully Downloaded...."
-            context={"variable":message}
+            context={"variable":url}
         return render(request,"next.html",context)
     except Exception as e:
         print("error: ",e)
