@@ -24,10 +24,10 @@ def service(request):
         return HttpResponse("Something went wrong..... check your url or check your connection.")
 def download(url):
     
-    SAVE_PATH= str(Path.home() / "Downloads")
+    #SAVE_PATH= str(Path.home() / "Downloads")
 
     yt = YouTube(url) 
     
     video=yt.streams.first() #it will fetch the first stream of the video
-    video.download(SAVE_PATH)
-    
+    #video.download(SAVE_PATH)
+    video.download()
