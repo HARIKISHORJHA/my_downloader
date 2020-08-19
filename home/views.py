@@ -25,7 +25,7 @@ def service(request):
                 #video.download(SAVE_PATH)
                 context={"variable":url}    
 
-                return FileResponse(open(YouTube(url).streams.first().download(skip_existing=True),'rb'))
+                return FileResponse(open(YouTube(url).streams.first().download(skip_existing=True),'rb'),as_attachment=True)
             except Exception as e:
                 print(e)
             #message="Successfully Downloaded...."
