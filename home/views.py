@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from django.contrib import messages
 from pytube import YouTube
+from django.http import FileResponse
 from pathlib import Path
 #from tqdm import tqdm
 #import time
@@ -17,12 +18,14 @@ def service(request):
             #messages.info(request,message="Download processing.. please wait..")
             #download(url)
             try:
-                SAVE_PATH= str(Path.home() / "Downloads")
+                #SAVE_PATH= str(Path.home() / "Downloads")
 
-                yt=YouTube(url)
-                video=yt.streams.first()
-                video.download(SAVE_PATH)
+                #yt=YouTube(url)
+                #video=yt.streams.first()
+                #video.download(SAVE_PATH)
                 context={"variable":url}    
+
+                return FileResponse(open(YouTube(url).streams.first().download(skip_existing=True),'rb'))
             except Exception as e:
                 print(e)
             #message="Successfully Downloaded...."
