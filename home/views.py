@@ -19,7 +19,7 @@ def service(request):
             yt=YouTube(url)
             video=yt.streams.first()
             video.download()
-            message="Successfully Downloaded...."
+            #message="Successfully Downloaded...."
             context={"variable":url}
         return render(request,"next.html",context)
     except Exception as e:
