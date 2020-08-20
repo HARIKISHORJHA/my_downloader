@@ -17,20 +17,18 @@ def service(request):
             url=request.POST.get("name", None)
             #messages.info(request,message="Download processing.. please wait..")
             #download(url)
-            try:
+            
                 #SAVE_PATH= str(Path.home() / "Downloads")
 
                 #yt=YouTube(url)
                 #video=yt.streams.first()
                 #video.download(SAVE_PATH)
-                context={"variable":url}    
+               
 
-                return FileResponse(open(YouTube(url).streams.first().download(skip_existing=True),'rb'),as_attachment=True)
-            except Exception as e:
-                print(e)
+            return FileResponse(open(YouTube(url).streams.first().download(skip_existing=True),'rb'),as_attachment=True)
+            
             #message="Successfully Downloaded...."
-                context={"variable":e}    
-        return render(request,"next.html",context)
+    
     except Exception as e:
         print("error: ",e)
         return HttpResponse("Something went wrong..... check your url or check your connection.")
