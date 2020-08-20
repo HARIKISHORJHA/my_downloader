@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 from django.views.static import serve
-
+from my_downloader import settings
 urlpatterns = [
     path("",views.home,name="home"), 
     path("home",views.home,name="home"),
